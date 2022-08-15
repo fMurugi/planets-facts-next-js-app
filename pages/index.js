@@ -1,8 +1,37 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Menu from '../components/MenuCard'
+import { useEffect ,useState} from 'react';
+import Description from '../components/Description';
 
-export default function Home() {
+export default function Home(props) {
+
+  const [chosenPlanet,setChosenPlanet]=useState("")
+  const name={props};
+  const API_URL = `https://api.api-ninjas.com/v1/planets?name= ${name}`
+
+ async function searchPlanet(){
+  const options={
+     headers:{
+      'X-Api-Key':'UYrtxdj/yHEsGj8u8hK1qg==MJBvJ33RumjZ4EJU',
+    
+    }
+
+  }
+  
+  const response =await fetch(`https://api.api-ninjas.com/v1/planets?name=${name}`,options);
+  const data = response.json();
+  console.log(data);
+ }
+
+ const [planets,setPalnets] = useState([])
+ useEffect(()=>{
+  searchPlanet();
+ },[])
+
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,47 +41,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <Menu option = {chosenPlanet} clickHandler ={setChosenPlanet}/>
+      <h1>{chosenPlanet}</h1>
+      <Description/>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+     
+         
       </main>
-
-      <footer className={styles.footer}>
+         
+      {/* <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -63,7 +60,9 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
+      </footer> */}
+
+      
     </div>
   )
 }
