@@ -1,9 +1,12 @@
 import React, { useState,useEffect } from 'react'
 // import styles from '../styles/Description.modules.css'
 
-function Description() {
+function Description(props) {
+  const {planetClicked} = props
+  // const {planetClicked} = {planetClicked}
+  console.log("planet Clicked:",{planetClicked})
     const [planetDescription,setPlanetDescription]=useState(null)
-    const url =   "https://en.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&exintro=&titles=Neptune";
+    const url =   `https://en.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&exintro=&titles=${planetClicked}`;
     
     const getFirstPageExtract = jsonResponse => {
         // You should probably add some validathin here to make sure pages exists
@@ -17,6 +20,7 @@ function Description() {
     const getDescription = async ()=>{
         const response = await fetch(url);
         const description = await response.json();
+        console.log("descriptin:",description);
         const extract = getFirstPageExtract(description);
         setPlanetDescription(extract);
 
@@ -28,7 +32,7 @@ function Description() {
 
   return (
     <div >
-        {/* <h1>{name}</h1> */}
+        {/* <h1>{nameOfChosenPlanet}</h1> */}
         {/* <p>{planetDescription}</p>    */}
            {planetDescription && <div dangerouslySetInnerHTML={{ __html: planetDescription }} />}
 

@@ -20,7 +20,7 @@ const options = [
 
 const ITEM_HEIGHT = 48;
 
-function LongMenu({option,clickHandler}) {
+function LongMenu({option,ChosenClickHandler}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -31,9 +31,11 @@ function LongMenu({option,clickHandler}) {
   };
 
   const OptionClickHandler = (e)=>{
-    const choice = e.target.value
-    clickHandler(choice)
-    console.log(clickHandler);
+    const choice = e.target.innerText
+    ChosenClickHandler(choice);
+    console.log(ChosenClickHandler);
+    console.log(e)
+    console.log(choice)
   }
 
   return (
