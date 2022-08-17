@@ -1,6 +1,7 @@
 .container {
   padding: 0 2rem;
-  background-color: #050233;
+  background-image: url(../public/galaxy.jpg);
+  /* background-color: #050233; */
   min-height: 100vh;
 }
 

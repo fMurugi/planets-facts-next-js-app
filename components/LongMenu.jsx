@@ -20,7 +20,7 @@ const options = [
 
 const ITEM_HEIGHT = 48;
 
-function LongMenu({option,ChosenClickHandler}) {
+function LongMenu({ChosenClickHandler}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -46,7 +46,6 @@ function LongMenu({option,ChosenClickHandler}) {
         aria-controls={open ? 'long-menu' : undefined}
         aria-expanded={open ? 'true' : undefined}
         aria-haspopup="true"
-    
         onClick={handleClick}
         className={styles.menuIcon}
       >
@@ -69,7 +68,7 @@ function LongMenu({option,ChosenClickHandler}) {
         }}
       >
         {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+          <MenuItem key={option} onClick={handleClose}>
             <span onClick={OptionClickHandler}>{option}</span>
           </MenuItem>
         ))}

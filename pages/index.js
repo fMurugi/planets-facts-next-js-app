@@ -6,33 +6,15 @@ import { useEffect ,useState} from 'react';
 import Description from '../components/Description';
 
 export default function Home(props) {
-
   const [chosenPlanet,setChosenPlanet]=useState("")
-  const name={props};
-  const API_URL = `https://api.api-ninjas.com/v1/planets?name= ${name}`
-
- async function searchPlanet(){
-  const options={
-     headers:{
-      'X-Api-Key':'UYrtxdj/yHEsGj8u8hK1qg==MJBvJ33RumjZ4EJU',
-    
-    }
-
-  }
-  
-  const response =await fetch(`https://api.api-ninjas.com/v1/planets?name=${name}`,options);
-  const data = response.json();
-  console.log(data);
- }
-
- const [planets,setPalnets] = useState([])
- useEffect(()=>{
-  searchPlanet();
- },[])
 
  const setPlanet =(option)=>{
   setChosenPlanet(option)
  }
+
+//  useEffect((option)=>{
+// setPlanet(option);
+// },[])
 
 
   return (
@@ -45,12 +27,10 @@ export default function Home(props) {
       </Head>
 
       <main className={styles.main}>
-      <Menu option = {chosenPlanet} ChosenClickHandler ={setPlanet}/>
-      <h1>{chosenPlanet}</h1>
-      <Description planetClicked={chosenPlanet}/>
-
-     
-         
+          <Menu selectedOption={chosenPlanet} ChosenClickHandler ={setPlanet} />
+          <h1>{chosenPlanet}</h1>
+          {chosenPlanet && <Description planetClicked={chosenPlanet} />}
+ 
       </main>
          
       {/* <footer className={styles.footer}>

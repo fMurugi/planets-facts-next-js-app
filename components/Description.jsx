@@ -1,8 +1,10 @@
 import React, { useState,useEffect } from 'react'
-// import styles from '../styles/Description.modules.css'
+import styles from '../styles/Description.module.css'
 
 function Description(props) {
   const {planetClicked} = props
+
+
   // const {planetClicked} = {planetClicked}
   console.log("planet Clicked:",{planetClicked})
     const [planetDescription,setPlanetDescription]=useState(null)
@@ -28,10 +30,10 @@ function Description(props) {
 
     useEffect(()=>{
         getDescription();
-    },[]);
+    },[{planetClicked}]);
 
   return (
-    <div >
+    <div className={styles.description}>
         {/* <h1>{nameOfChosenPlanet}</h1> */}
         {/* <p>{planetDescription}</p>    */}
            {planetDescription && <div dangerouslySetInnerHTML={{ __html: planetDescription }} />}
