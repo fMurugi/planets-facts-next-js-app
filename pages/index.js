@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import Menu from '../components/MenuCard'
 import { useEffect ,useState} from 'react';
 import Description from '../components/Description';
+import ImageCard from '../components/ImageCard';
 
 export default function Home(props) {
   const [chosenPlanet,setChosenPlanet]=useState("")
@@ -29,8 +30,11 @@ export default function Home(props) {
       <main className={styles.main}>
           <Menu selectedOption={chosenPlanet} ChosenClickHandler ={setPlanet} />
           <h1>{chosenPlanet}</h1>
+        
+          {chosenPlanet && <ImageCard planet={chosenPlanet}/>}
           {chosenPlanet && <Description planetClicked={chosenPlanet} />}
  
+        
       </main>
          
       {/* <footer className={styles.footer}>

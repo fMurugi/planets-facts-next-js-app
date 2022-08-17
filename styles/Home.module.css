@@ -133,3 +133,8 @@
     filter: invert(1);
   }
 }
+/* .divided{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
