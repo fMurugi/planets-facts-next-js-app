@@ -8,7 +8,7 @@ function ImageCard({planet}) {
   return (
     <div className={styles.planetImageDiv}>
         <Image  src={
-          require(`${prefix}/../public/svg/${planet}.jpg`)
+          require(`../public/svg/${planet}.jpg`)
           }/>
     </div>
   )
