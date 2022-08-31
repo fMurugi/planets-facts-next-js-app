@@ -4,10 +4,11 @@ import Image from 'next/image'
 
 
 function ImageCard({planet}) {
+  const prefix = "/planets-facts-next-js-app"
   return (
     <div className={styles.planetImageDiv}>
         <Image  src={
-          require(`../public/svg/${planet}.jpg`)
+          require(`${prefix}/../public/svg/${planet}.jpg`)
           }/>
     </div>
   )

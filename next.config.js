@@ -6,7 +6,9 @@ const nextConfig = {
     images: {
       unoptimized: true,
     },
-}
+},
+basePath:'/planets-facts-next-js-app',
+assetPrefix:'/planets-facts-next-js-app'
 }
 
 
