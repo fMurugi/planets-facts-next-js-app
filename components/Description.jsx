@@ -43,7 +43,7 @@ function Description(props) {
         {/* <h1>{nameOfChosenPlanet}</h1> */}
         {/* <p>{planetDescription}</p>    */}
            {/* {planetDescription && <div {dangerouslySetInnerHTML={ __html: planetDescription }} />} */}
-          {planetDescription && planetDescription }
+          {planetDescription && <div><h1 className={styles.planetClicked}>{planetClicked}</h1> <div>{planetDescription} </div></div>}
 
     </div>
   )

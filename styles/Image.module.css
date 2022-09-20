@@ -1,5 +1,13 @@
 .planetImageDiv{
-    width: 250px;
-    height: 250px;
+    width: 500px;
+    height: 500px;
+    border-right: 2px solid lightgray;
+   
+}
+@media screen and (max-width:480px) {
+    .planetImageDiv{
+        width: 250px;
+        height: 250px;
+    }
    
 }

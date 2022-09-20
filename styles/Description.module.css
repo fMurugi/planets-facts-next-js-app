@@ -1,8 +1,17 @@
 .description{
-    color:white;
-    width: 45%;
+    /* color:white; */
+    width: 65%;
     font-size: large;
-    background-color: rgb(9, 2, 39);
-    padding:10px;
-    box-shadow: 5px 5px 5px 5px rgb(1, 6, 36);
+    /* background-color: rgb(9, 2, 39); */
+    padding:26px; 
+    /* box-shadow: 5px 5px 5px 5px rgb(1, 6, 36); */
+}
+.planetClicked{
+    text-align: center;
+}
+@media screen and (max-width:480px) {
+    .description{
+        width: 95%;
+
+    }    
 }

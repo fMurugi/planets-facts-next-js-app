@@ -1,15 +1,15 @@
 .container {
   padding: 0 2rem;
 
-  background-color: #050233fa;
+  /* background-color: #050233fa; */
   min-height: 100vh;
   
 }
-.landingImage{
+/* .landingImage{
   width: 100%;
   z-index:0;
   backdrop-filter: blur(4px);
-}
+} */
 
 .main {
 
@@ -17,22 +17,26 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  color:white;
+  /* color:white; */
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index:1;
 }
 .planetComponent{
+  width: 65%;
   display:flex;
   flex-direction:row;
- justify-content: space-around;
- 
+ justify-content: space-between;
+ margin-top:16px;
+ margin-top:20px;
+
 
 }
+
 
 @media  screen and (max-width:480px) {
   .planetComponent {
+    width: 100%;
     display:flex;
     flex-direction: column;
 

@@ -32,10 +32,10 @@ export default function Home(props) {
 
       <main className={styles.main}>
           <Menu  selectedOption={chosenPlanet} ChosenClickHandler ={setPlanet} />
-          <h1>{chosenPlanet}</h1>
+         
           <div className = {styles.planetComponent}>
-          {chosenPlanet && <ImageCard planet={chosenPlanet}/>}
-          {chosenPlanet && <Description planetClicked={chosenPlanet} />}
+          {chosenPlanet && <ImageCard className={styles.planetImage} planet={chosenPlanet}/>}
+          {chosenPlanet && <Description className={styles.desc} planetClicked={chosenPlanet} />}
           </div>
         
          
