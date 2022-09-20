@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export":"next export"
+    "export": "next export"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -17,6 +17,7 @@
     "@mui/material": "^5.10.0",
     "material": "^0.4.3",
     "next": "^12.2.5",
+    "node-html-parser": "^6.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "ui": "^0.2.4"

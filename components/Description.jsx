@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import styles from '../styles/Description.module.css'
+const {parse} = require('node-html-parser');
+
 
 function Description(props) {
   const {planetClicked} = props
@@ -24,7 +26,11 @@ function Description(props) {
         const description = await response.json();
         console.log("descriptin:",description);
         const extract = getFirstPageExtract(description);
-        setPlanetDescription(extract);
+
+        const root = parse(extract);
+        const secondPara = root.querySelector("p:nth-of-type(3)");
+        
+        setPlanetDescription(secondPara.textContent);
 
     }
 
@@ -36,7 +42,8 @@ function Description(props) {
     <div className={styles.description}>
         {/* <h1>{nameOfChosenPlanet}</h1> */}
         {/* <p>{planetDescription}</p>    */}
-           {planetDescription && <div dangerouslySetInnerHTML={{ __html: planetDescription }} />}
+           {/* {planetDescription && <div {dangerouslySetInnerHTML={ __html: planetDescription }} />} */}
+          {planetDescription && planetDescription }
 
     </div>
   )
