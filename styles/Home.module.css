@@ -23,6 +23,21 @@
   position: relative;
   z-index:1;
 }
+.planetComponent{
+  display:flex;
+  flex-direction:row;
+ justify-content: space-around;
+ 
+
+}
+
+@media  screen and (max-width:480px) {
+  .planetComponent {
+    display:flex;
+    flex-direction: column;
+
+  }
+}
 
 .footer {
   display: flex;
