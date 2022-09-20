@@ -53,6 +53,7 @@
   position: relative;
   z-index: 1;
   flex-direction: column;
+  margin-top: 16px;
 }
 
 .footer a {
@@ -61,7 +62,6 @@
   align-items: center;
   flex-grow: 1;
   height:40%;
-  color: #eaeaea;
  } 
 
 

@@ -14,3 +14,9 @@
     flex-grow:1;
     text-align: center;
 }
+@media screen and (max-width:480px) {
+    .menu{
+        width: 100%;
+    }
+    
+}
