@@ -28,7 +28,12 @@ function Description(props) {
         const extract = getFirstPageExtract(description);
 
         const root = parse(extract);
-        const secondPara = root.querySelector("p:nth-of-type(3)");
+        let secondPara = root.querySelector("p:nth-of-type(3)");
+
+        if(planetClicked=="Mercury"){
+           secondPara=root.querySelector("ul:nth-of-type(1)");
+           console.log(" ROOT: --" + root);
+        }
         
         setPlanetDescription(secondPara.textContent);
 
